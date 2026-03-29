@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Movie Genre Prediction</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+text-align:center;
+margin-top:100px;
+}
+
+.container{
+background:white;
+width:500px;
+margin:auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;
+}
+
+textarea{
+width:90%;
+height:120px;
+}
+
+button{
+padding:10px 20px;
+background:blue;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Movie Genre Prediction</h2>
+
+<form action="/predict" method="post">
+
+<textarea name="plot" placeholder="Enter movie plot here"></textarea>
+
+<br><br>
+
+<button type="submit">Predict Genre</button>
+
+</form>
+
+{% if prediction %}
+
+<h3>Predicted Genre: {{ prediction }}</h3>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
